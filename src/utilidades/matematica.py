@@ -1,4 +1,4 @@
-from math import cos, sin, pi, sqrt, atan
+from math import cos, sin, pi, sqrt, atan2
 
 
 def polar_to_rectangular(modulo, angulo):
@@ -21,9 +21,6 @@ def rectangular_to_polar(x, y):
     """
     modulo = sqrt(x**2 + y**2)
 
-    if(y == 0):
-        y = 0.000001
-
-    angulo = atan(x / y)  # Angulo está en radianes
+    angulo = atan2(x / y)  # Angulo está en radianes
 
     return modulo, angulo
