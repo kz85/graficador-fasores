@@ -1,4 +1,4 @@
-from math import cos, sin, pi
+from math import cos, sin, pi, sqrt, atan
 
 
 def polar_to_rectangular(modulo, angulo):
@@ -13,3 +13,17 @@ def polar_to_rectangular(modulo, angulo):
     y = modulo * sin(argumento)
 
     return x, y
+
+
+def rectangular_to_polar(x, y):
+    """
+    devuelve las componentes modulo y angulo para un fasor dadas sus coordenadas x y
+    """
+    modulo = sqrt(x**2 + y**2)
+
+    if(y == 0):
+        y = 0.000001
+
+    angulo = atan(x / y)  # Angulo está en radianes
+
+    return modulo, angulo
